@@ -10,47 +10,42 @@ const commonSpecs = {
 };
 
 const products = [
-  {
-    name: "TMT Bars",
-    image: "/image/tmtbars.png",
-    description:
-      "High-strength ribbed TMT bars built for maximum durability, flexibility, and earthquake resistance. The foundation of modern construction.",
-  },
-  {
-    name: "Structural Beams",
-    image: "/image/structuralbeams.png",
-    description:
-      "Premium structural steel beams crafted for heavy-duty load bearing. Ensuring structural integrity and flawless execution for mega-projects.",
-  },
-  {
-    name: "Billets",
-    image: "/image/billets.png",
-    description:
-      "High-quality steel billets manufactured with precision. The perfect raw material for forging superior steel products.",
-  },
+  { name: "TMT Bars", image: "/TMT Bars.png" },
+  { name: "Round Bars", image: "/Round Bars.png" },
+  { name: "Square Bars", image: "/Square Bars.png" },
+  { name: "C Channels", image: "/C Channels.png" },
+  { name: "Angles", image: "/Angles.png" },
+  { name: "Flats", image: "/Flats.png" },
+  { name: "I Beams", image: "/I Beams.png" },
+  { name: "Pipes", image: "/Pipes.png" },
+  { name: "Rectangular Tubes", image: "/Rectangular Tubes.png" },
+  { name: "Square Tubes", image: "/Square Tubes.png" },
 ];
 
 export default function HomeProducts() {
   return (
-    <section className="relative w-full overflow-hidden bg-white/50 px-6 py-24 md:px-12">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-white to-slate-50/70 px-4 py-20 sm:px-6 md:px-12 md:py-24">
+      
       {/* Background elements */}
-      <div className="pointer-events-none absolute right-0 top-0 -z-10 h-[500px] w-[500px] rounded-full bg-accent-red/5 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] rounded-full bg-accent-yellow/5 blur-[120px]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-red/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-yellow/5 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-      <div className="z-10 mx-auto max-w-7xl">
-        <div className="mb-16 flex flex-col items-center text-center">
+      <div className="relative z-10 mx-auto max-w-7xl">
+
+        {/* Heading */}
+        <div className="mb-14 flex flex-col items-center text-center md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-4 flex items-center gap-4"
+            className="mb-4 flex items-center gap-3 sm:gap-4"
           >
-            <div className="h-[2px] w-12 bg-accent-red" />
-            <h2 className="font-body text-sm font-bold uppercase tracking-[0.2em] text-accent-red">
+            <div className="h-[2px] w-8 bg-accent-red sm:w-12" />
+            <h2 className="font-body text-xs font-bold uppercase tracking-[0.2em] text-accent-red sm:text-sm">
               Our Products
             </h2>
-            <div className="h-[2px] w-12 bg-accent-red" />
+            <div className="h-[2px] w-8 bg-accent-red sm:w-12" />
           </motion.div>
 
           <motion.h3
@@ -58,93 +53,87 @@ export default function HomeProducts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 font-heading text-4xl text-foreground md:text-5xl"
+            className="mb-5 font-heading text-3xl text-foreground sm:text-4xl md:mb-6 md:text-5xl"
           >
             Masterpieces of <span className="text-accent-red">Steel</span>
           </motion.h3>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-2xl font-body text-lg text-foreground/70"
-          >
-            Engineered to perfection, our diverse range of steel products forms
-            the resilient core of iconic structures worldwide.
-          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+
           {products.map((product, index) => (
             <motion.div
               key={product.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              className="group relative overflow-hidden rounded-sm border border-gray-100 bg-white shadow-xl"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: index * 0.08 }}
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
             >
+
+              {/* Image */}
               <div className="relative h-[420px] w-full overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
-
-                <div className="pointer-events-none absolute inset-0 z-20 border-4 border-transparent transition-colors duration-500 group-hover:border-accent-red/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/10 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
 
-              <div className="absolute bottom-0 left-0 z-20 w-full p-6 md:p-8">
-                <div className="mb-4 h-1 w-10 bg-accent-red transition-all duration-500 group-hover:w-16" />
+              {/* Content */}
+              <div className="absolute inset-x-0 bottom-0 z-20 p-5 sm:p-6">
 
-                <h4 className="mb-3 font-heading text-3xl text-white drop-shadow-md">
+                <div className="mb-3 h-1 w-10 rounded-full bg-accent-red transition-all duration-500 group-hover:w-16" />
+
+                <h4 className="mb-4 font-heading text-2xl text-white drop-shadow-md">
                   {product.name}
                 </h4>
 
-                <p className="mb-5 font-body text-sm leading-relaxed text-white/90">
-                  {product.description}
-                </p>
+                {/* Sizes */}
+                <div className="mb-3">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-yellow">
+                    Sizes
+                  </p>
 
-                <div className="space-y-4">
-                  <div>
-                    <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent-yellow">
-                      Sizes
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {commonSpecs.sizes.map((size) => (
-                        <span
-                          key={size}
-                          className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
-                        >
-                          {size}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h5 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent-yellow">
-                      Grades
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {commonSpecs.grades.map((grade) => (
-                        <span
-                          key={grade}
-                          className="rounded-full border border-accent-yellow/30 bg-accent-yellow/10 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
-                        >
-                          {grade}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {commonSpecs.sizes.map((size) => (
+                      <span
+                        key={size}
+                        className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm"
+                      >
+                        {size}
+                      </span>
+                    ))}
                   </div>
                 </div>
+
+                {/* Grades */}
+                <div>
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-yellow">
+                    Grades
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {commonSpecs.grades.map((grade) => (
+                      <span
+                        key={grade}
+                        className="rounded-full border border-accent-yellow/30 bg-accent-yellow/10 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm"
+                      >
+                        {grade}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             </motion.div>
           ))}
+
         </div>
       </div>
     </section>
