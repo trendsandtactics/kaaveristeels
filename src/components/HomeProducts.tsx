@@ -7,61 +7,61 @@ import { motion } from "framer-motion";
 const products = [
   {
     name: "TMT Bars",
-    image: "/image/TMT Bars.png",
+    image: "/TMT Bars.png",
     description:
       "High-strength ribbed TMT bars engineered for durability, flexibility, and earthquake resistance. Available in sizes: 8 mm, 10 mm, 12 mm, 16 mm, 20 mm, 25 mm, and 32 mm. Grades: Fe 500, Fe 500D, Fe 550, Fe 550D, Fe 600, and CRS.",
   },
   {
     name: "Round Bars",
-    image: "/image/Round Bars.png",
+    image: "/Round Bars.png",
     description:
       "Precision-manufactured round steel bars designed for machining, fabrication, construction, and heavy industrial applications.",
   },
   {
     name: "Square Bars",
-    image: "/image/Square Bars.png",
+    image: "/Square Bars.png",
     description:
       "High-quality square steel bars offering superior strength, dimensional accuracy, and versatility for structural and manufacturing needs.",
   },
   {
     name: "C Channels",
-    image: "/image/C Channels.png",
+    image: "/C Channels.png",
     description:
       "Robust C-channel steel sections ideal for framing, support structures, fabrication, and heavy-duty industrial applications.",
   },
   {
     name: "Angles",
-    image: "/image/Angles.png",
+    image: "/Angles.png",
     description:
       "Durable steel angles designed for structural reinforcement, construction frameworks, fabrication, and engineering projects.",
   },
   {
     name: "Flats",
-    image: "/image/Flats.png",
+    image: "/Flats.png",
     description:
       "Flat steel bars crafted with precision, widely used in fabrication, construction, infrastructure, and industrial manufacturing.",
   },
   {
     name: "I Beams",
-    image: "/image/I Beams.png",
+    image: "/I Beams.png",
     description:
       "High-strength I-beams engineered for load-bearing structures, delivering maximum support and structural stability for large-scale projects.",
   },
   {
     name: "Pipes",
-    image: "/image/Pipes.png",
+    image: "/Pipes.png",
     description:
       "Premium steel pipes designed for construction, infrastructure, fabrication, and fluid transport applications.",
   },
   {
     name: "Rectangular Tubes",
-    image: "/image/Rectangular Tubes.png",
+    image: "/Rectangular Tubes.png",
     description:
       "Rectangular hollow steel sections offering excellent strength, lightweight performance, and structural efficiency for modern fabrication.",
   },
   {
     name: "Square Tubes",
-    image: "/image/Square Tubes.png",
+    image: "/Square Tubes.png",
     description:
       "Square hollow steel tubes engineered for structural frameworks, fabrication, architectural designs, and industrial applications.",
   },
